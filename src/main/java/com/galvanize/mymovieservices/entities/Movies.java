@@ -1,6 +1,6 @@
 package com.galvanize.mymovieservices.entities;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,6 +9,7 @@ import java.sql.Date;
 @Data
 @Entity
 @Table(name = "movies")
+
 public class Movies implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -89,5 +90,4 @@ public class Movies implements Serializable {
     @Column(name = "title")
     private String title;
 
-    
 }

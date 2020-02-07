@@ -5,7 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface MoviesRepository extends JpaRepository<Movies, Long>, JpaSpecificationExecutor<Movies> {
+import java.util.List;
 
+@Repository
+public interface MoviesRepository extends JpaRepository<Movies, Long> {
+    List<Movies> findMoviesBytitleContains(String title);
 }

@@ -16,8 +16,16 @@ class MoviesRepositoryTest {
     MoviesRepository movieRepo;
 
     @Test
-    void findMoviesByTitleContains() {
-        List<Movies> allTitle = movieRepo.findMoviesBytitleContains("Star");
+    void findMoviesByTitleContainsSomething() {
+        List<Movies> allTitle = movieRepo.findMoviesByTitleContains("Star");
         assertTrue(allTitle.size()>0);
     }
+
+    @Test
+    void findMoviesByTitleContainsNotfound() {
+        List<Movies> allTitle = movieRepo.findMoviesByTitleContains("123455555");
+        assertTrue(allTitle.size()==0);
+    }
+
+
 }
